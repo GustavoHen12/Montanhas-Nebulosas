@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+        <title>montanhas nebulosas</title>
+    </head>
+    <body style="background-color: #263238;">
+        <div class = "container">
+            <div class = "mapaBk">
+                <img class = "mapa" src = "img/mapa2.png">
+                <button class="fase pos1" onclick="vaiPara('fase1')">A</button>
+                <button class="fase pos2" onclick="vaiPara('fase2')">A</button>
+                <button class="fase pos3">A</button>
+                <button class="fase pos4">A</button>
+                <button class="fase pos5">A</button>
+                <button class="faseP pos6">a</button>
+                <button class="faseP pos7">a</button>
+                <button class="faseP pos8">a</button>
+                <button class="fasePp pos9">a</button>
+                <button class="fasePp pos10">a</button>
+            </div>
+        </div>
+
+        <div id="Modal" class="modal">
+
+            <div class="modal-content" >
+                <span class="close">&times;</span>
+                
+                <div id = "fase1" style="display: none;">
+                    <p>Vá para o portal</p>
+                    <div id="resposta1" class = "resultado" style="display: none;">
+                        <p>result</p>
+                    </div>
+                    <div class ="content1">
+                        <img src = "img/portas.jpg">
+                        <button class = "fase posiciona" onclick ="resp1()" >E</button> 
+                    </div>
+                    <div class = "dica">
+                        <p onclick="dica('dica1')" style="cursor: pointer;">dica</p>
+                        <p id = "dica1" style="display: none;">1 Samuel 16</p>
+                    </div>
+                </div>
+             
+
+                <div id = "fase2" style="display: none;">
+                    <div id="resposta2" class = "resultado" style="display: none;">
+                        <p>result</p>
+                    </div>  
+                    
+                    <input id = "tentativa2" type="text" id="fname" name="fname">
+                    <button class = "btn" onclick="submete2()">Enviar</button>
+                    <div class = "dica">
+                        <p onclick="dica('dica2')" style="cursor: pointer;">dica</p>
+                        <p id = "dica2" style="display: none;">Caminho / sem acento</p>
+                    </div>
+                </div>
+
+            </div>  
+        </div>
+        <script>
+            function vaiPara(fase){
+                var modal = document.getElementById("Modal");
+                modal.style.display = "block"; 
+                var f = document.getElementById(fase);
+                f.style.display = "block";
+            }
+
+            function dica(eleme){
+                let dica = document.getElementById(eleme);
+                if (dica.style.display == "block")
+                    dica.style.display = "none";
+                else
+                    dica.style.display = "block";
+            }
+
+            function resp1(){
+                document.getElementById('resposta1').style.display = "block";
+            }
+            function submete2()
+            {
+                let tent = document.getElementById('tentativa2').value;
+                if (tent == "JoaoBatista")
+                document.getElementById('resposta2').style.display = "block";
+            }
+            
+            var modal = document.getElementById("Modal");
+                       
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            
+            span.onclick = function() {
+              modal.style.display = "none";
+              document.getElementById("fase1").style.display = "none";
+              document.getElementById("fase2").style.display = "none";
+            }            
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+                document.getElementById("fase1").style.display = "none";
+              document.getElementById("fase2").style.display = "none";
+              }
+            }
+        </script>
+    </body>
+</html>
