@@ -13,7 +13,7 @@
                 <img class = "mapa" src = "img/mapa2.png">
                 <button class="fase pos1" onclick="vaiPara('fase1')">A</button>
                 <button class="fase pos2" onclick="vaiPara('fase2')">A</button>
-                <button class="fase pos3">A</button>
+                <button class="fase pos3" onclick="mensagem()">A</button>
                 <button class="fase pos4">A</button>
                 <button class="fase pos5">A</button>
                 <button class="faseP pos6">a</button>
@@ -32,7 +32,8 @@
                 <div id = "fase1" style="display: none;">
                     <p>Vá para o portal</p>
                     <div id="resposta1" class = "resultado" style="display: none;">
-                        <p>result</p>
+                        <p>https://docs.google.com/presentation/d/1h_tglSgcaVokIzlBtM_9NmfDlJ2aqPgvwA3OlkKGJ9M/edit?usp=sharing</p>
+                        <p>https://youtu.be/Iw-CO4MjDkE</p>
                     </div>
                     <div class ="content1">
                         <img src = "img/portas.jpg">
@@ -47,7 +48,8 @@
 
                 <div id = "fase2" style="display: none;">
                     <div id="resposta2" class = "resultado" style="display: none;">
-                        <p>result</p>
+                        <p>https://drive.google.com/file/d/1EIIWKyY7-G8PA5pNVjoC_N1ZKlpdFJ4J/view?usp=sharing</p>
+                        <p>No mapa encontrará seu próximo destino</p>
                     </div>  
                     
                     <input id = "tentativa2" type="text" id="fname" name="fname">
@@ -61,6 +63,10 @@
             </div>  
         </div>
         <script>
+            function mensagem()
+            {
+                alert("Há trolls no caminho, aguarde");
+            }
             function vaiPara(fase){
                 var modal = document.getElementById("Modal");
                 modal.style.display = "block"; 
@@ -82,7 +88,7 @@
             function submete2()
             {
                 let tent = document.getElementById('tentativa2').value;
-                if (tent == "JoaoBatista")
+                if (tent == "Joao Batista")
                 document.getElementById('resposta2').style.display = "block";
             }
             
