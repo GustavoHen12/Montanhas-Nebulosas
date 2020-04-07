@@ -79,6 +79,11 @@ a{
     width: 80%; 
   }
 
+.resultado{
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 79, 79);
+}
 /************************************FASE 1***************************************************************/
 .content1{
     width: 100%;
@@ -95,8 +100,20 @@ a{
 
 .posiciona{
     position: absolute;
-    bottom: 70%;
-    left: 90%;
+    bottom: 68%;
+    left: 87%;
+}
+
+.porta{
+    position: absolute;
+    opacity: 0;
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 7% 5%;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;  
 }
 /************************************FASE 2***************************************************************/
 .btn{
