@@ -13,9 +13,9 @@
                 <img class = "mapa" src = "img/mapa2.png">
                 <button class="fase pos1" onclick="vaiPara('fase1')">A</button>
                 <button class="fase pos2" onclick="vaiPara('fase2')">A</button>
-                <button class="fase pos3" onclick="mensagem()">A</button>
-                <button class="fase pos4">A</button>
-                <button class="fase pos5">A</button>
+                <button class="fase pos3" onclick="vaiPara('fase3')">A</button>
+                <button class="fase pos4" onclick="vaiPara('fase4')">A</button>
+                <button class="fase pos5" onclick="mensagem(5)">A</button>
                 <button class="faseP pos6">a</button>
                 <button class="faseP pos7">a</button>
                 <button class="faseP pos8">a</button>
@@ -53,19 +53,46 @@
                     </div>  
                     
                     <input id = "tentativa2" type="text" id="fname" name="fname">
-                    <button class = "btn" onclick="submete2()">Enviar</button>
+                    <button class = "btn" onclick="submete(2)">Enviar</button>
                     <div class = "dica">
                         <p onclick="dica('dica2')" style="cursor: pointer;">dica</p>
                         <p id = "dica2" style="display: none;">Caminho / sem acento</p>
                     </div>
                 </div>
 
+                <div id = "fase3" style="display: none;">
+                    <p>Lmainqw ycibzw: iaaqabi m lmakcjzi ycmu nwq Rwpv Ematmg, wvli lczi, xzwkczm xwz Ivbwvqw Eigvm, mtm tpm lizi i kpidm xizi lmakwjzqz w xzwfquw lmainqw</p>
+                    <div class = "dica">
+                        <p onclick="dica('dica3')" style="cursor: pointer;">dica</p>
+                        <p id = "dica3" style="display: none;">a chave esta na página da canção / cryptii.com</p>
+                    </div>
+                </div>
+
+                <div id = "fase4" style="display: none;">
+                    <div id="resposta4" class = "resultado" style="display: none;">
+                        <p>Parabéns você achou o código</p>
+                        <p>O elfo te entregará o próximo desafio: https://docs.google.com/presentation/d/1yVkswh10URbcpuNpTxQ6XWkYcqXU1rlW_2ZdLKWLaNc/edit?usp=sharing</p>
+                    </div>
+                    <div class = "pergunta">
+                        <p>Insira o código</p>
+                        <input id = "input4" type="text" id="fname" name="fname">
+                        <button class = "btn" onclick="submete(4)">Enviar</button>    
+                    </div>  
+                    <div class = "dica">
+                        <p onclick="dica('dica4')" style="cursor: pointer;">dica</p>
+                        <p id = "dica4" style="display: none;">Resolva o desafio 3</p>
+                    </div>
+                </div>
+
             </div>  
         </div>
         <script>
-            function mensagem()
+            function mensagem(ind)
             {
-                alert("Há trolls no caminho, aguarde");
+                if(ind == 4)
+                    alert("O desafio não está aqui");
+                else if (ind == 5)
+                    alert("O elfo ainda não chegou, volte amanhã");
             }
             function vaiPara(fase){
                 var modal = document.getElementById("Modal");
@@ -85,11 +112,20 @@
             function resp1(){
                 document.getElementById('resposta1').style.display = "block";
             }
-            function submete2()
+            function submete(fase)
             {
-                let tent = document.getElementById('tentativa2').value;
-                if (tent == "Joao Batista")
-                document.getElementById('resposta2').style.display = "block";
+                if(fase == 2)
+                {
+                    let tent = document.getElementById('tentativa2').value;
+                    if (tent == "Joao Batista")
+                        document.getElementById('resposta2').style.display = "block";
+                }
+                else if (fase == 4)
+                {
+                    let tent = document.getElementById('input4').value;
+                    if (tent == "3324")
+                        document.getElementById('resposta4').style.display = "block";
+                }
             }
             
             var modal = document.getElementById("Modal");
@@ -101,12 +137,16 @@
               modal.style.display = "none";
               document.getElementById("fase1").style.display = "none";
               document.getElementById("fase2").style.display = "none";
+              document.getElementById("fase3").style.display = "none";
+              document.getElementById("fase4").style.display = "none";
             }            
             window.onclick = function(event) {
               if (event.target == modal) {
                 modal.style.display = "none";
                 document.getElementById("fase1").style.display = "none";
-              document.getElementById("fase2").style.display = "none";
+                document.getElementById("fase2").style.display = "none";
+                document.getElementById("fase3").style.display = "none";
+                document.getElementById("fase4").style.display = "none";
               }
             }
         </script>
