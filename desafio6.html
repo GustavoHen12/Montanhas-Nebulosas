@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+        <title>montanhas nebulosas</title>
+    </head>
+    <body style="background-color: #263238;">
+        <!--INSTRUÇÕES DO DESAFIO + DICA-->
+        <div id = "intrucoes" class = "intrucoes meio">
+            <p>Leve aquele que pede ao seu destino</p>
+            <p onclick="inicia()" style="cursor: pointer; color: green">COMEÇAR</p>
+            <div class = "dica">
+                <p onclick="dica('dica6')" style="cursor: pointer;">dica</p>
+                <p id = "dica6" style="display: none;">Provérbios 4: 25-27</p>
+            </div>
+        </div>
+
+        <!--MENSAGEM DE VITÓRIA-->
+        <div style="display: none;" id = "resposta" class = "resposta esquerdo">
+            <p>Parabéns pela vitória!</p>
+            <p>Para o próximo desafio, fale com o Guardião</p>
+            <p>Guardião: https://chat.whatsapp.com/EijzG98kgfeCoJVi4KYceF</p>
+            <a href="mapa.html">Voltar</a>
+        </div> 
+
+        <!--ELEMENTOS DO JOGO-->
+        <div id="mydiv" style="display: none;">
+            <div id="mydivheader">LEVE-ME</div>
+        </div>
+        <div id="destino" class = "destino" style="opacity: 0;">
+            <p>DESTINO</p>
+        </div>
+
+        <script>
+            function dica(eleme){
+                let dica = document.getElementById(eleme);
+                if (dica.style.display == "block")
+                    dica.style.display = "none";
+                else
+                    dica.style.display = "block";
+            }
+
+            function ganha()
+            {
+                document.getElementById("mydiv").style.display = "none";
+                document.getElementById("destino").style.display = "none";
+
+                document.getElementById("resposta").style.display = "block";
+
+            }
+
+            function inicia()
+            {
+                document.getElementById("mydiv").style.display = "block";
+                document.getElementById("destino").style.opacity = 1;
+
+                document.getElementById("intrucoes").style.display = "none";
+            }
+
+            dragElement(document.getElementById("mydiv"));
+
+            function dragElement(elmnt) {
+                let posIni = 110;
+                let posFinal = document.getElementById("destino").offsetLeft;
+                console.log(posFinal); 
+                var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                if (document.getElementById(elmnt.id + "header")) {
+                    // if present, the header is where you move the DIV from:
+                    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+                } else {
+                    // otherwise, move the DIV from anywhere inside the DIV:
+                    elmnt.onmousedown = dragMouseDown;
+                }
+
+                function dragMouseDown(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // get the mouse cursor position at startup:
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    document.onmouseup = closeDragElement;
+                    // call a function whenever the cursor moves:
+                    document.onmousemove = elementDrag;
+                }
+
+                function elementDrag(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // calculate the new cursor position:
+                    pos1 = pos3 - e.clientX;
+                    pos2 = pos4 - e.clientY;
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    console.log((elmnt.offsetTop - pos2));
+                    if((posIni > ((elmnt.offsetTop - pos2) + 10)) ||
+                        (posIni < ((elmnt.offsetTop - pos2) - 10)))
+                    {
+                        elmnt.style.top = "110px";
+                        elmnt.style.left = "10px";
+                    }
+                    else if((parseInt(elmnt.style.left) + 10) >= posFinal)
+                    {
+                        ganha();
+                    }
+                    else
+                    {
+                        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px"; 
+                           
+                    }
+                }
+
+                function closeDragElement() {
+                    // stop moving when mouse button is released:
+                    document.onmouseup = null;
+                    document.onmousemove = null;
+                }
+            }
+        </script>
+    </body>
+</html>

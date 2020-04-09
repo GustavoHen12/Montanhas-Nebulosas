@@ -8,15 +8,14 @@
         <title>montanhas nebulosas</title>
     </head>
     <body style="background-color: #263238;">
-        <!--MAPA COM OS BOTOES-->
         <div class = "container">
             <div class = "mapaBk">
                 <img class = "mapa" src = "img/mapa2.png">
-                <button class="fase pos1" onclick="mensagem(1)">A</button>
-                <button class="fase pos2" onclick="mensagem(1)">A</button>
+                <button class="fase pos1" onclick="vaiPara('fase1')">A</button>
+                <button class="fase pos2" onclick="vaiPara('fase2')">A</button>
                 <button class="fase pos3" onclick="vaiPara('fase3')">A</button>
                 <button class="fase pos4" onclick="vaiPara('fase4')">A</button>
-                <button class="fase pos5" onclick="vaiPara('fase5')">A</button>
+                <button class="fase pos5" onclick="mensagem(5)">A</button>
                 <button class="faseP pos6">a</button>
                 <button class="faseP pos7">a</button>
                 <button class="faseP pos8">a</button>
@@ -25,11 +24,42 @@
             </div>
         </div>
 
-        <!--MODAL COM AS FASES-->
         <div id="Modal" class="modal">
 
             <div class="modal-content" >
                 <span class="close">&times;</span>
+                
+                <div id = "fase1" style="display: none;">
+                    <p>Vá para o portal</p>
+                    <div id="resposta1" class = "resultado" style="display: none;">
+                        <p>https://docs.google.com/presentation/d/1h_tglSgcaVokIzlBtM_9NmfDlJ2aqPgvwA3OlkKGJ9M/edit?usp=sharing</p>
+                        <p>https://youtu.be/Iw-CO4MjDkE</p>
+                    </div>
+                    <div class ="content1">
+                        <img src = "img/portas.jpg">
+                        <button class = "porta posiciona" onclick ="resp1()" >E</button> 
+                    </div>
+                    <div class = "dica">
+                        <p onclick="dica('dica1')" style="cursor: pointer;">dica</p>
+                        <p id = "dica1" style="display: none;">1 Samuel 16</p>
+                    </div>
+                </div>
+             
+
+                <div id = "fase2" style="display: none;">
+                    <div id="resposta2" class = "resultado" style="display: none;">
+                        <p>https://drive.google.com/file/d/1EIIWKyY7-G8PA5pNVjoC_N1ZKlpdFJ4J/view?usp=sharing</p>
+                        <p>No mapa encontrará seu próximo destino</p>
+                    </div>  
+                    
+                    <input id = "tentativa2" type="text" id="fname" name="fname">
+                    <button class = "btn" onclick="submete(2)">Enviar</button>
+                    <div class = "dica">
+                        <p onclick="dica('dica2')" style="cursor: pointer;">dica</p>
+                        <p id = "dica2" style="display: none;">Caminho / sem acento</p>
+                    </div>
+                </div>
+
                 <div id = "fase3" style="display: none;">
                     <p>Lmainqw ycibzw: iaaqabi m lmakcjzi ycmu nwq Rwpv Ematmg, wvli lczi, xzwkczm xwz Ivbwvqw Eigvm, mtm tpm lizi i kpidm xizi lmakwjzqz w xzwfquw lmainqw</p>
                     <div class = "dica">
@@ -54,33 +84,13 @@
                     </div>
                 </div>
 
-                <div id = "fase5" style="display: none;">
-                    <div id="resposta5" class = "resultado" style="display: none;">
-                        <a href="desafio6.html" style="margin-right: 1em; margin-left: 1em;color: black;">Desafio 6</a>
-                        <a href="https://drive.google.com/file/d/1kthuSulsdAIq1bOjw-Z0xkpDrsJKPH4X/view?usp=sharing" style="color: black;">Página</a>
-                    </div>
-                    <div class = "pergunta">
-                        <form class = "pergunta5">
-                            <label for="login">Quem é você :</label>
-                            <input id = "login" type="text" name="login">
-                            <label for="pwd">Senha :</label>
-                            <input type="password" id="pwd" name="pwd">    
-                        </form>
-                        <button class = "btn" onclick="submete(5)">Enviar</button>
-                    </div>  
-                    <div class = "dica">
-                        <p onclick="dica('dica5')" style="cursor: pointer;">dica</p>
-                        <p id = "dica5" style="display: none;">A senha é a referência completa (sem acento ou :)</p>
-                    </div>
-                </div>
-
             </div>  
         </div>
         <script>
             function mensagem(ind)
             {
-                if(ind == 1)
-                    alert("Os orcs dominaram esta região");
+                if(ind == 4)
+                    alert("O desafio não está aqui");
                 else if (ind == 5)
                     alert("O elfo ainda não chegou, volte amanhã");
             }
@@ -116,14 +126,6 @@
                     if (tent == "3324")
                         document.getElementById('resposta4').style.display = "block";
                 }
-                else if (fase == 5)
-                {
-                    let login = document.getElementById('login').value;
-                    let pwd = document.getElementById('pwd').value;
-                    console.log(pwd);
-                    if ((login == "filho de Deus") && (pwd == "Joao112"))
-                        document.getElementById('resposta5').style.display = "block";
-                }
             }
             
             var modal = document.getElementById("Modal");
@@ -133,16 +135,16 @@
             
             span.onclick = function() {
               modal.style.display = "none";
-              document.getElementById("fase5").style.display = "none";
-              //document.getElementById("fase6").style.display = "none";
+              document.getElementById("fase1").style.display = "none";
+              document.getElementById("fase2").style.display = "none";
               document.getElementById("fase3").style.display = "none";
               document.getElementById("fase4").style.display = "none";
             }            
             window.onclick = function(event) {
               if (event.target == modal) {
                 modal.style.display = "none";
-                document.getElementById("fase5").style.display = "none";
-               // document.getElementById("fase6").style.display = "none";
+                document.getElementById("fase1").style.display = "none";
+                document.getElementById("fase2").style.display = "none";
                 document.getElementById("fase3").style.display = "none";
                 document.getElementById("fase4").style.display = "none";
               }
