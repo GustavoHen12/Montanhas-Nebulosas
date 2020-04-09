@@ -36,27 +36,6 @@
         </div>
 
         <script>
-            var isMobile = {
-                Android: function() {
-                    return navigator.userAgent.match(/Android/i);
-                },
-                BlackBerry: function() {
-                    return navigator.userAgent.match(/BlackBerry/i);
-                },
-                iOS: function() {
-                    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-                },
-                Opera: function() {
-                    return navigator.userAgent.match(/Opera Mini/i);
-                },
-                Windows: function() {
-                    return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
-                },
-                any: function() {
-                    return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-                }
-            };
-
             function dica(eleme){
                 let dica = document.getElementById(eleme);
                 if (dica.style.display == "block")
@@ -169,23 +148,24 @@
 
                 function MdragMouseDown(e) {
                     e = e || window.event;
-                    e.preventDefault();
+                    //e.preventDefault();
                     // get the mouse cursor position at startup:
-                    pos3 = e.clientX;
-                    pos4 = e.clientY;
+                    pos3 = e.touches[0].clientX;
+                    pos4 = e.touches[0].clientY;
                     document.ontouchend = McloseDragElement;
                     // call a function whenever the cursor moves:
                     document.ontouchmove = MelementDrag;
                 }
 
                 function MelementDrag(e) {
+                    //console.log("aqui");
                     e = e || window.event;
-                    e.preventDefault();
+                    //e.preventDefault();
                     // calculate the new cursor position:
-                    pos1 = pos3 - e.clientX;
-                    pos2 = pos4 - e.clientY;
-                    pos3 = e.clientX;
-                    pos4 = e.clientY;
+                    pos1 = pos3 - e.touches[0].clientX;
+                    pos2 = pos4 - e.touches[0].clientY;
+                    pos3 = e.touches[0].clientX;
+                    pos4 = e.touches[0].clientY;
                     if((posIni > ((elmnt.offsetTop - pos2) + 10)) ||
                         (posIni < ((elmnt.offsetTop - pos2) - 10)))
                     {
@@ -200,7 +180,8 @@
                     {
                         elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
                         elmnt.style.left = (elmnt.offsetLeft - pos1) + "px"; 
-                           
+                        // console.log(elmnt.style.left);
+                        // console.log((elmnt.offsetLeft));
                     }
                 }
 
