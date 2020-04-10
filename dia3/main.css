@@ -225,15 +225,7 @@ a{
     top:100px;
     right: 10px;
 }
-/************************************FASE 8***************************************************************/
-.frase{
-    height: auto;
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
+
 /***************************************************************************************************/
 
 .container{
