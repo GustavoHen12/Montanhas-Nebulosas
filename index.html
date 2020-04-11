@@ -2,18 +2,69 @@
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Viaoda+Libre&display=swap" rel="stylesheet">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="main.css">
         <title>montanhas nebulosas</title>
     </head>
     <body style="background-color: #8244FF;">
+        <!--MENU-->
         <div class = "home">
-            <div class = "menu">
-                <h1 class = "txMenu">Montanhas Nebulosas</h1>
-                <a href = "mapa.html"><h2 class = "txMenu opMenu">mapa</h2></a>
+            <div id = "menu" class = "menu">
+                <h1 class = "txMenu fontGotu">Montanhas Nebulosas</h1>
+                <a href = "mapa.html"><h2 class = "txMenu opMenu fontLibre">Mapa</h2></a>
+                <h2 class = "txMenu opMenu fontLibre" onclick="instruction()">Instruções</h2>
             </div>
-            <img class = "fundo" src = "img/background.png">
         </div>
+
+        <!--INSTRUCOES-->
+        <div id = "Instruções" class = "instruções fontGotu" style="display: none;">
+            <h3 onclick="intr('texto1')">Iniciando</h3>
+            <div id="texto1" class = "texto">
+                <img src="img/t1.png">
+                <p>Seu objetivo é atravessar a montanha. Portanto sua primeira parada é ao pé da motanha, basta clicar e acessar o desafio</p>
+                <p>Siga a trilha para ganhar o jogo.</p>
+            </div>
+            <h3 onclick="intr('texto2')">Desafio</h3>
+            <div id="texto2" class = "texto">
+                <img src="img/t2.png">
+                <p>Ao acessar um desafio você encontrará seu enunciado e uma dica que pode ser acessada, mas lembre-se que todo desafio pode ser resolvido sem a dica.</p>
+                <p>Lembre-se que nem todos os desafios serão realizados neste site, portanto fique atento.</p>
+            </div>
+            <h3 onclick="intr('texto3')">Vitória</h3>
+            <div id="texto3" class = "texto">
+                <img src="img/t3.png">
+                <p>Quando você ganhar um desafio você reberá as instruções para o próximo desafio, e mais algumas coisas que podem ajudar na sua jornada.</p>
+                <p>Em algumas fases, você receberá uma pagina especial, recolha todas, porque o primeiro que recolher ganha o desafio.</p>
+            </div>
+            <p onclick="menu()" class = "opMenu" style="color: white;">Menu</p>
+        </div>
+
+        <!--IMAGEM DE FUNDO-->
+        <img class = "fundo" src = "img/background.png">
+
+        <script>
+            function instruction()
+            {
+                document.getElementById("menu").style.display = "none";
+                document.getElementById("Instruções").style.display = "block";
+            }
+
+            function menu()
+            {
+                document.getElementById("Instruções").style.display = "none";
+                document.getElementById("menu").style.display = "flex";
+            }
+            function intr(fase)
+            {
+                document.getElementById("texto1").style.display = "none";
+                document.getElementById("texto2").style.display = "none";
+                document.getElementById("texto3").style.display = "none";
+                
+                document.getElementById(fase).style.display = "flex";
+
+            }
+        </script>
     </body>
 </html>

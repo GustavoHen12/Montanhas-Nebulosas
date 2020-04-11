@@ -2,12 +2,17 @@
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Viaoda+Libre&display=swap" rel="stylesheet">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="main.css">
         <title>montanhas nebulosas</title>
     </head>
     <body style="background-color: #263238;">
+        <!--imagem do céu ao fundo-->
+        <img class = "top" src="img/ceu.png">
+
+        <!--montanha e botoes-->
         <div class = "container">
             <div class = "mapaBk">
                 <img class = "mapa" src = "img/mapa2.png">
@@ -23,67 +28,73 @@
                 <button class="fasePp pos10">a</button>
             </div>
         </div>
-
+        <!--MODAL COM AS FASES-->
         <div id="Modal" class="modal">
 
             <div class="modal-content" >
                 <span class="close">&times;</span>
-                
-                <div id = "fase1" style="display: none;">
-                    <p>Vá para o portal</p>
-                    <div id="resposta1" class = "resultado" style="display: none;">
-                        <p>https://docs.google.com/presentation/d/1h_tglSgcaVokIzlBtM_9NmfDlJ2aqPgvwA3OlkKGJ9M/edit?usp=sharing</p>
-                        <p>https://youtu.be/Iw-CO4MjDkE</p>
+                <!--Fase 1-->
+                <div id = "fase1" class = "point">
+                    <div id="resposta1" class = "resultado fontGotu">
+                        <a href="https://docs.google.com/presentation/d/1h_tglSgcaVokIzlBtM_9NmfDlJ2aqPgvwA3OlkKGJ9M/edit?usp=sharing"><p>https://docs.google.com/presentation</p></a>
+                        <a href="https://youtu.be/Iw-CO4MjDkE"><p>https://youtu.be/Iw-CO4MjDkE</p></a>
                     </div>
-                    <div class ="content1">
-                        <img src = "img/portas.jpg">
-                        <button class = "porta posiciona" onclick ="resp1()" >E</button> 
+                    <div class = "desafio fontGotu">
+                        <p>Vá para o portal</p>
+                        <div class ="content1">
+                            <img src = "img/portas.jpg">
+                            <button class = "porta posiciona" onclick ="resp1()" >E</button> 
+                        </div>
                     </div>
-                    <div class = "dica">
-                        <p onclick="dica('dica1')" style="cursor: pointer;">dica</p>
+                    <div class = "dica fontLibre">
+                        <p onclick="dica('dica1')" style="cursor: pointer;">Dica</p>
                         <p id = "dica1" style="display: none;">1 Samuel 16</p>
                     </div>
                 </div>
              
-
-                <div id = "fase2" style="display: none;">
-                    <div id="resposta2" class = "resultado" style="display: none;">
+                <!--Fase 2-->
+                <div id = "fase2" class = "point">
+                    <div id="resposta2" class = "resultado fontGotu">
                         <p>https://drive.google.com/file/d/1EIIWKyY7-G8PA5pNVjoC_N1ZKlpdFJ4J/view?usp=sharing</p>
                         <p>No mapa encontrará seu próximo destino</p>
                     </div>  
-                    
-                    <input id = "tentativa2" type="text" id="fname" name="fname">
-                    <button class = "btn" onclick="submete(2)">Enviar</button>
-                    <div class = "dica">
-                        <p onclick="dica('dica2')" style="cursor: pointer;">dica</p>
+                    <div class = "desafio fontGotu meio">
+                        <input id = "tentativa2" type="text" id="fname" name="fname">
+                        <button class = "btn" onclick="submete2()">Enviar</button>
+                    </div>
+                    <div class = "dica fontLibre">
+                        <p onclick="dica('dica2')" style="cursor: pointer;">Dica</p>
                         <p id = "dica2" style="display: none;">Caminho / sem acento</p>
                     </div>
                 </div>
 
-                <div id = "fase3" style="display: none;">
-                    <p>Lmainqw ycibzw: iaaqabi m lmakcjzi ycmu nwq Rwpv Ematmg, wvli lczi, xzwkczm xwz Ivbwvqw Eigvm, mtm tpm lizi i kpidm xizi lmakwjzqz w xzwfquw lmainqw</p>
-                    <div class = "dica">
-                        <p onclick="dica('dica3')" style="cursor: pointer;">dica</p>
-                        <p id = "dica3" style="display: none;">a chave esta na página da canção / cryptii.com</p>
+                <!--Fase 3-->
+                <div id = "fase3" class = "point">
+                    <div class = "desafio fontGotu meio">
+                        <p>Lmainqw ycibzw: iaaqabi m lmakcjzi ycmu nwq Rwpv Ematmg, wvli lczi, xzwkczm xwz Ivbwvqw Eigvm, mtm tpm lizi i kpidm xizi lmakwjzqz w xzwfquw lmainqw</p>
+                    </div>
+                    <div class = "dica fontLibre">
+                        <p onclick="dica('dica3')" style="cursor: pointer;">Dica</p>
+                        <p id = "dica3" style="display: none;">a chave esta na página da canção / existem decoders na internet</p>
                     </div>
                 </div>
 
-                <div id = "fase4" style="display: none;">
-                    <div id="resposta4" class = "resultado" style="display: none;">
+                <!--Fase 4-->
+                <div id = "fase4" class = "point">
+                    <div id="resposta4" class = "resultado fontGotu">
                         <p>Parabéns você achou o código</p>
-                        <p>O elfo te entregará o próximo desafio: https://docs.google.com/presentation/d/1yVkswh10URbcpuNpTxQ6XWkYcqXU1rlW_2ZdLKWLaNc/edit?usp=sharing</p>
+                        <p>O elfo te entregará o próximo desafio <a href="https://docs.google.com/presentation/d/1yVkswh10URbcpuNpTxQ6XWkYcqXU1rlW_2ZdLKWLaNc/edit?usp=sharing">aqui</a></p>
                     </div>
-                    <div class = "pergunta">
+                    <div class = "desafio fontGotu pergunta">
                         <p>Insira o código</p>
                         <input id = "input4" type="text" id="fname" name="fname">
                         <button class = "btn" onclick="submete(4)">Enviar</button>    
                     </div>  
-                    <div class = "dica">
-                        <p onclick="dica('dica4')" style="cursor: pointer;">dica</p>
+                    <div class = "dica fontLibre">
+                        <p onclick="dica('dica4')" style="cursor: pointer;">Dica</p>
                         <p id = "dica4" style="display: none;">Resolva o desafio 3</p>
                     </div>
                 </div>
-
             </div>  
         </div>
         <script>

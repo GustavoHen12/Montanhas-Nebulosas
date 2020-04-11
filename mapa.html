@@ -2,13 +2,17 @@
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Viaoda+Libre&display=swap" rel="stylesheet">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="main.css">
         <title>montanhas nebulosas</title>
     </head>
     <body style="background-color: #263238;">
-        <!--MAPA COM OS BOTOES-->
+        <!--imagem do céu ao fundo-->
+        <img class = "top" src="img/ceu.png">
+
+        <!--montanha e botoes-->
         <div class = "container">
             <div class = "mapaBk">
                 <img class = "mapa" src = "img/mapa2.png">
@@ -30,13 +34,14 @@
 
             <div class="modal-content" >
                 <span class="close">&times;</span>
-                <!--FASE 5-->
-                <div id = "fase5" style="display: none;">
-                    <div id="resposta5" class = "resultado" style="display: none;">
+
+                <!--Fase 5-->
+                <div id = "fase5" class = "point">
+                    <div id="resposta5" class = "resultado fontGotu">
                         <a href="desafio6.html" style="margin-right: 1em; margin-left: 1em;color: black;">Desafio 6</a>
                         <a href="https://drive.google.com/file/d/1kthuSulsdAIq1bOjw-Z0xkpDrsJKPH4X/view?usp=sharing" style="color: black;">Página</a>
                     </div>
-                    <div class = "pergunta">
+                    <div class = "desafio fontGotu pergunta">
                         <form class = "pergunta5">
                             <label for="login">Quem é você :</label>
                             <input id = "login" type="text" name="login">
@@ -45,8 +50,8 @@
                         </form>
                         <button class = "btn" onclick="submete(5)">Enviar</button>
                     </div>  
-                    <div class = "dica">
-                        <p onclick="dica('dica5')" style="cursor: pointer;">dica</p>
+                    <div class = "dica fontLibre">
+                        <p onclick="dica('dica5')" style="cursor: pointer;">Dica</p>
                         <p id = "dica5" style="display: none;">A senha é a referência completa (sem acento ou :)</p>
                     </div>
                 </div>
@@ -57,11 +62,11 @@
                 <!--grupo do whatsapp-->
 
                 <!--FASE8-->
-                <div id = "fase8" style="display: none;">
-                    <div id="resposta8" class = "resultado" style="display: none;">
+                <div id = "fase8" class = "point">
+                    <div id="resposta8" class = "resultado fontGotu">
                         <a href="https://docs.google.com/document/d/1qMZHQwJfX4_Jkt2cnklm9rrZaxbozvxPJ-HGmRn61G8/edit?usp=sharing" style="margin-right: 1em; margin-left: 1em;color: black;">Desafio 9</a>
                     </div>
-                    <div class = "pergunta">
+                    <div class = "desafio">
                         <div class = "frase">
                             <p>1 6 2 5</p>
                             <p>3 26 42 3</p>
@@ -70,8 +75,8 @@
                         <input id = "frase8" type="text" name="login">
                         <button class = "btn" onclick="submete(8)">Enviar</button>
                     </div>  
-                    <div class = "dica">
-                        <p onclick="dica('dica8')" style="cursor: pointer;">dica</p>
+                    <div class = "dica fontLibre">
+                        <p onclick="dica('dica8')" style="cursor: pointer;">Dica</p>
                         <p id = "dica8" style="display: none;">O maior best-seller da história (Almeida Revista e Atualizida)</p>
                     </div>
                 </div>
