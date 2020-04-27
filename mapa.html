@@ -2,80 +2,76 @@
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Viaoda+Libre&display=swap" rel="stylesheet">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="main.css">
         <title>montanhas nebulosas</title>
     </head>
     <body style="background-color: #263238;">
-        <!--imagem do céu ao fundo-->
-        <img class = "top" src="img/ceu.png">
+         <!--imagem do céu ao fundo-->
+         <img class = "top" src="img/ceu.png">
 
-        <!--montanha e botoes-->
+         <!--montanha e botoes-->
         <div class = "container">
             <div class = "mapaBk">
                 <img class = "mapa" src = "img/mapa2.png">
-                <button class="fase pos1" onclick="mensagem(1)">A</button>
-                <button class="fase pos2" onclick="mensagem(1)">A</button>
-                <button class="fase pos3" onclick="mensagem(1)">A</button>
-                <button class="fase pos4" onclick="mensagem(1)">A</button>
-                <button class="fase pos5" onclick="mensagem(1)">A</button>
-                <button class="faseP pos6" onclick="mensagem(1)">a</button>
-                <button class="faseP pos7" onclick="mensagem(7)">a</button>
-                <button class="faseP pos8" onclick="vaiPara('fase8')">a</button>
-                <button class="fasePp pos9" onclick="vaiPara('fase9')">a</button>
-                <button class="fasePp pos10" onclick="mensagem(10)">a</button>
+                <button class="fase pos1" onclick="vaiPara('fase1')">A</button>
+                <button class="fase pos2" onclick="vaiPara('fase2')">A</button>
+                <button class="fase pos3" onclick="mensagem()">A</button>
+                <button class="fase pos4">A</button>
+                <button class="fase pos5">A</button>
+                <button class="faseP pos6">a</button>
+                <button class="faseP pos7">a</button>
+                <button class="faseP pos8">a</button>
+                <button class="fasePp pos9">a</button>
+                <button class="fasePp pos10">a</button>
             </div>
         </div>
-
-        <!--MODAL COM AS FASES-->
         <div id="Modal" class="modal">
 
             <div class="modal-content" >
                 <span class="close">&times;</span>
-
-                <!--FASE8-->
-                <div id = "fase8" class = "point">
-                    <div id="resposta8" class = "resultado fontGotu">
-                        <a href="https://docs.google.com/document/d/1qMZHQwJfX4_Jkt2cnklm9rrZaxbozvxPJ-HGmRn61G8/edit?usp=sharing" style="margin-right: 1em; margin-left: 1em;color: black;">Desafio 9</a>
+                <!--Fase 1-->
+                <div id = "fase1" class = "point">
+                    <div id="resposta1" class = "resultado fontGotu">
+                        <a href="https://docs.google.com/presentation/d/1h_tglSgcaVokIzlBtM_9NmfDlJ2aqPgvwA3OlkKGJ9M/edit?usp=sharing"><p>https://docs.google.com/presentation</p></a>
+                        <a href="https://youtu.be/Iw-CO4MjDkE"><p>https://youtu.be/Iw-CO4MjDkE</p></a>
                     </div>
-                    <div class = "desafio">
-                        <div class = "frase">
-                            <p>1 6 2 5</p>
-                            <p>3 26 42 3</p>
-                            <p>49 5 28 16</p>
-                        </div>
-                        <input id = "frase8" type="text" name="login">
-                        <button class = "btn" onclick="submete(8)">Enviar</button>
-                    </div>  
-                    <div class = "dica fontLibre">
-                        <p onclick="dica('dica8')" style="cursor: pointer;">Dica</p>
-                        <p id = "dica8" style="display: none;">O maior best-seller da história (Almeida Revista e Atualizida)</p>
-                    </div>
-                </div>
-
-                <!--Fase 9-->
-                <div id = "fase9" class = "point">
                     <div class = "desafio fontGotu">
-                        <p>Decifre o desafio 8 para acessar o 9</p>
-                    </div>  
+                        <p>Vá para o portal</p>
+                        <div class ="content1">
+                            <img src = "img/portas.jpg">
+                            <button class = "porta posiciona" onclick ="resp1()" >E</button> 
+                        </div>
+                    </div>
                     <div class = "dica fontLibre">
-                        <p onclick="dica('dica5')" style="cursor: pointer;">Dica</p>
-                        <p id = "dica5" style="display: none;">perdao/Facebook</p>
+                        <p onclick="dica('dica1')" style="cursor: pointer;">Dica</p>
+                        <p id = "dica1" style="display: none;">1 Samuel 16</p>
                     </div>
                 </div>
+             
+                <!--Fase 2-->
+                <div id = "fase2" class = "point">
+                    <div id="resposta2" class = "resultado fontGotu">
+                        <p>https://drive.google.com/file/d/1EIIWKyY7-G8PA5pNVjoC_N1ZKlpdFJ4J/view?usp=sharing</p>
+                        <p>No mapa encontrará seu próximo destino</p>
+                    </div>  
+                    <div class = "desafio fontGotu meio">
+                        <input id = "tentativa2" type="text" id="fname" name="fname">
+                        <button class = "btn" onclick="submete2()">Enviar</button>
+                    </div>
+                    <div class = "dica fontLibre">
+                        <p onclick="dica('dica2')" style="cursor: pointer;">Dica</p>
+                        <p id = "dica2" style="display: none;">Caminho / sem acento</p>
+                    </div>
+                </div>
+
             </div>  
         </div>
         <script>
-            function mensagem(ind)
+            function mensagem()
             {
-                if(ind == 1)
-                    alert("Os orcs dominaram esta região");
-                else if (ind == 10)
-                    alert("O desafio não esta aqui");
-                else if (ind == 7)
-                    alert("O desafio esta com o guardião");
+                alert("Há trolls no caminho, aguarde");
             }
             function vaiPara(fase){
                 var modal = document.getElementById("Modal");
@@ -95,21 +91,11 @@
             function resp1(){
                 document.getElementById('resposta1').style.display = "block";
             }
-            function submete(fase)
+            function submete2()
             {
-                if (fase == 8)
-                {
-                    let txt = document.getElementById('frase8').value;
-                    if (txt == "Deus me ama")
-                        document.getElementById('resposta8').style.display = "block";
-                }
-                else if (fase == 5)
-                {
-                    let login = document.getElementById('login').value;
-                    let pwd = document.getElementById('pwd').value;
-                    if ((login == "filho de Deus") && (pwd == "Joao112"))
-                        document.getElementById('resposta5').style.display = "block";
-                }
+                let tent = document.getElementById('tentativa2').value;
+                if (tent == "Joao Batista")
+                document.getElementById('resposta2').style.display = "block";
             }
             
             var modal = document.getElementById("Modal");
@@ -119,18 +105,14 @@
             
             span.onclick = function() {
               modal.style.display = "none";
-              document.getElementById("fase9").style.display = "none";
-              //document.getElementById("fase6").style.display = "none";
-              document.getElementById("fase8").style.display = "none";
-              //document.getElementById("fase4").style.display = "none";
+              document.getElementById("fase1").style.display = "none";
+              document.getElementById("fase2").style.display = "none";
             }            
             window.onclick = function(event) {
               if (event.target == modal) {
                 modal.style.display = "none";
-                document.getElementById("fase9").style.display = "none";
-                //document.getElementById("fase6").style.display = "none";
-                document.getElementById("fase8").style.display = "none";
-                //document.getElementById("fase4").style.display = "none";
+                document.getElementById("fase1").style.display = "none";
+              document.getElementById("fase2").style.display = "none";
               }
             }
         </script>
