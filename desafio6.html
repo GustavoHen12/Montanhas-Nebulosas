@@ -36,27 +36,6 @@
         </div>
 
         <script>
-            var isMobile = {
-                Android: function() {
-                    return navigator.userAgent.match(/Android/i);
-                },
-                BlackBerry: function() {
-                    return navigator.userAgent.match(/BlackBerry/i);
-                },
-                iOS: function() {
-                    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-                },
-                Opera: function() {
-                    return navigator.userAgent.match(/Opera Mini/i);
-                },
-                Windows: function() {
-                    return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
-                },
-                any: function() {
-                    return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-                }
-            };
-
             function dica(eleme){
                 let dica = document.getElementById(eleme);
                 if (dica.style.display == "block")
@@ -74,13 +53,18 @@
 
             }
 
-            function inicia()
+            function inicia(tp)
             {
                 document.getElementById("mydiv").style.display = "block";
                 document.getElementById("destino").style.opacity = 1;
-
                 document.getElementById("intrucoes").style.display = "none";
+                
+                if(tp == 1)
+                    MdragElement(document.getElementById("mydiv"));
+                else
+                    dragElement(document.getElementById("mydiv"));
             }
+            
             if(isMobile.any)
                 MdragElement(document.getElementById("mydiv"));
             else
