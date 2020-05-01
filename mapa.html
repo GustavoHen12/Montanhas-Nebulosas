@@ -18,12 +18,12 @@
                 <img class = "mapa" src = "img/mapa2.png">
                 <button class="fase pos1" onclick="mensagem(1)">A</button>
                 <button class="fase pos2" onclick="mensagem(1)">A</button>
-                <button class="fase pos3" onclick="vaiPara('fase3')">A</button>
-                <button class="fase pos4" onclick="vaiPara('fase4')">A</button>
+                <button class="fase pos3" onclick="mensagem(1)">A</button>
+                <button class="fase pos4" onclick="mensagem(1)">A</button>
                 <button class="fase pos5" onclick="vaiPara('fase5')">A</button>
-                <button class="faseP pos6">a</button>
-                <button class="faseP pos7">a</button>
-                <button class="faseP pos8">a</button>
+                <button class="faseP pos6" onclick="mensagem(6)">a</button>
+                <button class="faseP pos7" onclick="mensagem(7)">a</button>
+                <button class="faseP pos8" onclick="vaiPara('fase8')">a</button>
                 <button class="fasePp pos9">a</button>
                 <button class="fasePp pos10">a</button>
             </div>
@@ -34,34 +34,6 @@
 
             <div class="modal-content" >
                 <span class="close">&times;</span>
-        
-                <!--Fase 3-->
-                <div id = "fase3" class = "point">
-                    <div class = "desafio fontGotu meio">
-                        <p>Lmainqw ycibzw: iaaqabi m lmakcjzi ycmu nwq Rwpv Ematmg, wvli lczi, xzwkczm xwz Ivbwvqw Eigvm, mtm tpm lizi i kpidm xizi lmakwjzqz w xzwfquw lmainqw</p>
-                    </div>
-                    <div class = "dica fontLibre">
-                        <p onclick="dica('dica3')" style="cursor: pointer;">Dica</p>
-                        <p id = "dica3" style="display: none;">a chave esta na página da canção / existem decoders na internet</p>
-                    </div>
-                </div>
-
-                <!--Fase 4-->
-                <div id = "fase4" class = "point">
-                    <div id="resposta4" class = "resultado fontGotu">
-                        <p>Parabéns você achou o código</p>
-                        <p>O elfo te entregará o próximo desafio <a href="https://docs.google.com/presentation/d/1yVkswh10URbcpuNpTxQ6XWkYcqXU1rlW_2ZdLKWLaNc/edit?usp=sharing">aqui</a></p>
-                    </div>
-                    <div class = "desafio fontGotu pergunta">
-                        <p>Insira o código</p>
-                        <input id = "input4" type="text" id="fname" name="fname">
-                        <button class = "btn" onclick="submete(4)">Enviar</button>    
-                    </div>  
-                    <div class = "dica fontLibre">
-                        <p onclick="dica('dica4')" style="cursor: pointer;">Dica</p>
-                        <p id = "dica4" style="display: none;">Resolva o desafio 3</p>
-                    </div>
-                </div>
 
                 <!--Fase 5-->
                 <div id = "fase5" class = "point">
@@ -83,7 +55,31 @@
                         <p id = "dica5" style="display: none;">A senha é a referência completa (sem acento ou :)</p>
                     </div>
                 </div>
+                <!--FASE 6-->
+                <!--outra página-->
 
+                <!--FASE 7-->
+                <!--grupo do whatsapp-->
+
+                <!--FASE8-->
+                <div id = "fase8" class = "point">
+                    <div id="resposta8" class = "resultado fontGotu">
+                        <a href="https://docs.google.com/document/d/1qMZHQwJfX4_Jkt2cnklm9rrZaxbozvxPJ-HGmRn61G8/edit?usp=sharing" style="margin-right: 1em; margin-left: 1em;color: black;">Desafio 9</a>
+                    </div>
+                    <div class = "pergunta">
+                        <div class = "frase">
+                            <p>1 6 2 5</p>
+                            <p>3 26 42 3</p>
+                            <p>49 5 28 16</p>
+                        </div>
+                        <input id = "frase8" type="text" name="login">
+                        <button class = "btn" onclick="submete(8)">Enviar</button>
+                    </div>  
+                    <div class = "dica fontLibre">
+                        <p onclick="dica('dica8')" style="cursor: pointer;">Dica</p>
+                        <p id = "dica8" style="display: none;">O maior best-seller da história (Almeida Revista e Atualizida)</p>
+                    </div>
+                </div>
             </div>  
         </div>
         <script>
@@ -91,8 +87,10 @@
             {
                 if(ind == 1)
                     alert("Os orcs dominaram esta região");
-                else if (ind == 5)
-                    alert("O elfo ainda não chegou, volte amanhã");
+                else if (ind == 6)
+                    alert("O desafio não esta aqui");
+                else if (ind == 7)
+                    alert("O desafio esta com o guardião");
             }
             function vaiPara(fase){
                 var modal = document.getElementById("Modal");
@@ -114,23 +112,16 @@
             }
             function submete(fase)
             {
-                if(fase == 2)
+                if (fase == 8)
                 {
-                    let tent = document.getElementById('tentativa2').value;
-                    if (tent == "Joao Batista")
-                        document.getElementById('resposta2').style.display = "block";
-                }
-                else if (fase == 4)
-                {
-                    let tent = document.getElementById('input4').value;
-                    if (tent == "3324")
-                        document.getElementById('resposta4').style.display = "block";
+                    let txt = document.getElementById('frase8').value;
+                    if (txt == "Deus me ama")
+                        document.getElementById('resposta8').style.display = "block";
                 }
                 else if (fase == 5)
                 {
                     let login = document.getElementById('login').value;
                     let pwd = document.getElementById('pwd').value;
-                    console.log(pwd);
                     if ((login == "filho de Deus") && (pwd == "Joao112"))
                         document.getElementById('resposta5').style.display = "block";
                 }
@@ -145,16 +136,16 @@
               modal.style.display = "none";
               document.getElementById("fase5").style.display = "none";
               //document.getElementById("fase6").style.display = "none";
-              document.getElementById("fase3").style.display = "none";
-              document.getElementById("fase4").style.display = "none";
+              document.getElementById("fase8").style.display = "none";
+              //document.getElementById("fase4").style.display = "none";
             }            
             window.onclick = function(event) {
               if (event.target == modal) {
                 modal.style.display = "none";
                 document.getElementById("fase5").style.display = "none";
-               // document.getElementById("fase6").style.display = "none";
-                document.getElementById("fase3").style.display = "none";
-                document.getElementById("fase4").style.display = "none";
+                //document.getElementById("fase6").style.display = "none";
+                document.getElementById("fase8").style.display = "none";
+                //document.getElementById("fase4").style.display = "none";
               }
             }
         </script>
