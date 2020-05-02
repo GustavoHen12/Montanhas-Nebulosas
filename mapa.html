@@ -20,12 +20,12 @@
                 <button class="fase pos2" onclick="mensagem(1)">A</button>
                 <button class="fase pos3" onclick="mensagem(1)">A</button>
                 <button class="fase pos4" onclick="mensagem(1)">A</button>
-                <button class="fase pos5" onclick="vaiPara('fase5')">A</button>
-                <button class="faseP pos6" onclick="mensagem(6)">a</button>
+                <button class="fase pos5" onclick="mensagem(1)">A</button>
+                <button class="faseP pos6" onclick="mensagem(1)">a</button>
                 <button class="faseP pos7" onclick="mensagem(7)">a</button>
                 <button class="faseP pos8" onclick="vaiPara('fase8')">a</button>
-                <button class="fasePp pos9">a</button>
-                <button class="fasePp pos10">a</button>
+                <button class="fasePp pos9" onclick="vaiPara('fase9')">a</button>
+                <button class="fasePp pos10" onclick="mensagem(10)">a</button>
             </div>
         </div>
 
@@ -35,38 +35,12 @@
             <div class="modal-content" >
                 <span class="close">&times;</span>
 
-                <!--Fase 5-->
-                <div id = "fase5" class = "point">
-                    <div id="resposta5" class = "resultado fontGotu">
-                        <a href="desafio6.html" style="margin-right: 1em; margin-left: 1em;color: black;">Desafio 6</a>
-                        <a href="https://drive.google.com/file/d/1kthuSulsdAIq1bOjw-Z0xkpDrsJKPH4X/view?usp=sharing" style="color: black;">Página</a>
-                    </div>
-                    <div class = "desafio fontGotu pergunta">
-                        <form class = "pergunta5">
-                            <label for="login">Quem é você :</label>
-                            <input id = "login" type="text" name="login">
-                            <label for="pwd">Senha :</label>
-                            <input type="password" id="pwd" name="pwd">    
-                        </form>
-                        <button class = "btn" onclick="submete(5)">Enviar</button>
-                    </div>  
-                    <div class = "dica fontLibre">
-                        <p onclick="dica('dica5')" style="cursor: pointer;">Dica</p>
-                        <p id = "dica5" style="display: none;">A senha é a referência completa (sem acento ou :)</p>
-                    </div>
-                </div>
-                <!--FASE 6-->
-                <!--outra página-->
-
-                <!--FASE 7-->
-                <!--grupo do whatsapp-->
-
                 <!--FASE8-->
                 <div id = "fase8" class = "point">
                     <div id="resposta8" class = "resultado fontGotu">
                         <a href="https://docs.google.com/document/d/1qMZHQwJfX4_Jkt2cnklm9rrZaxbozvxPJ-HGmRn61G8/edit?usp=sharing" style="margin-right: 1em; margin-left: 1em;color: black;">Desafio 9</a>
                     </div>
-                    <div class = "pergunta">
+                    <div class = "desafio">
                         <div class = "frase">
                             <p>1 6 2 5</p>
                             <p>3 26 42 3</p>
@@ -80,6 +54,17 @@
                         <p id = "dica8" style="display: none;">O maior best-seller da história (Almeida Revista e Atualizida)</p>
                     </div>
                 </div>
+
+                <!--Fase 9-->
+                <div id = "fase9" class = "point">
+                    <div class = "desafio fontGotu">
+                        <p>Decifre o desafio 8 para acessar o 9</p>
+                    </div>  
+                    <div class = "dica fontLibre">
+                        <p onclick="dica('dica5')" style="cursor: pointer;">Dica</p>
+                        <p id = "dica5" style="display: none;">perdao/Facebook</p>
+                    </div>
+                </div>
             </div>  
         </div>
         <script>
@@ -87,7 +72,7 @@
             {
                 if(ind == 1)
                     alert("Os orcs dominaram esta região");
-                else if (ind == 6)
+                else if (ind == 10)
                     alert("O desafio não esta aqui");
                 else if (ind == 7)
                     alert("O desafio esta com o guardião");
@@ -134,7 +119,7 @@
             
             span.onclick = function() {
               modal.style.display = "none";
-              document.getElementById("fase5").style.display = "none";
+              document.getElementById("fase9").style.display = "none";
               //document.getElementById("fase6").style.display = "none";
               document.getElementById("fase8").style.display = "none";
               //document.getElementById("fase4").style.display = "none";
@@ -142,7 +127,7 @@
             window.onclick = function(event) {
               if (event.target == modal) {
                 modal.style.display = "none";
-                document.getElementById("fase5").style.display = "none";
+                document.getElementById("fase9").style.display = "none";
                 //document.getElementById("fase6").style.display = "none";
                 document.getElementById("fase8").style.display = "none";
                 //document.getElementById("fase4").style.display = "none";
