@@ -1,8 +1,7 @@
 # Montanhas-Nebulosas
 
 Alguns jovens do vilarejo de Anvard começam uma disputa para descobrir quem conseguirá chegar ao topo das Montanhas Nebulosas. Porém a viagem não será fácil, durante o caminho eles terão que vencer 10 desafios, e coletar 3 páginas especiais, apenas aquele que chegar primeiro será o grande campeão.
-  - [Acessar Site](https://gustavohen12.github.io/Montanhas-Nebulosas/)
-  >link:https://gustavohen12.github.io/Montanhas-Nebulosas/
+  - Site: https://gustavohen12.github.io/Montanhas-Nebulosas/
 
 
 ## Ideia geral
@@ -25,8 +24,8 @@ Desta forma, durante os desafios os jovens utilizarão, ou terão contato, com a
 
 # Páginas especiais
 
-1 [O Hobbit](https://drive.google.com/file/d/1EIIWKyY7-G8PA5pNVjoC_N1ZKlpdFJ4J/view?usp=sharing)
+- 1° [O Hobbit](https://drive.google.com/file/d/1EIIWKyY7-G8PA5pNVjoC_N1ZKlpdFJ4J/view?usp=sharing)
 
-2 [As Crônicas de Narnia - O sobrinho do mago](https://drive.google.com/file/d/1kthuSulsdAIq1bOjw-Z0xkpDrsJKPH4X/view?usp=sharing)
+- 2° [As Crônicas de Narnia - O sobrinho do mago](https://drive.google.com/file/d/1kthuSulsdAIq1bOjw-Z0xkpDrsJKPH4X/view?usp=sharing)
 
-3 [As Crônicas de Narnia - A cadeira de prata](https://drive.google.com/file/d/1SVHnLjR0oGDbpl7rAVnF0QzyeKgcP46P/view?usp=sharing) 
+- 3° [As Crônicas de Narnia - A cadeira de prata](https://drive.google.com/file/d/1SVHnLjR0oGDbpl7rAVnF0QzyeKgcP46P/view?usp=sharing) 
