@@ -16,16 +16,16 @@
         <div class = "container">
             <div class = "mapaBk">
                 <img class = "mapa" src = "img/mapa2.png">
-                <button class="fase pos1" onclick="mensagem(1)">A</button>
-                <button class="fase pos2" onclick="mensagem(1)">A</button>
-                <button class="fase pos3" onclick="mensagem(1)">A</button>
-                <button class="fase pos4" onclick="mensagem(1)">A</button>
+                <button class="fase pos1" onclick="vaiPara('fase1')">A</button>
+                <button class="fase pos2" onclick="vaiPara('fase2')">A</button>
+                <button class="fase pos3" onclick="vaiPara('fase3')">A</button>
+                <button class="fase pos4" onclick="vaiPara('fase4')">A</button>
                 <button class="fase pos5" onclick="vaiPara('fase5')">A</button>
                 <button class="faseP pos6" onclick="mensagem(6)">a</button>
                 <button class="faseP pos7" onclick="mensagem(7)">a</button>
                 <button class="faseP pos8" onclick="vaiPara('fase8')">a</button>
-                <button class="fasePp pos9">a</button>
-                <button class="fasePp pos10">a</button>
+                <button class="fasePp pos9" onclick="vaiPara('fase9')">a</button>
+                <button class="fasePp pos10" onclick="mensagem(10)">a</button>
             </div>
         </div>
 
@@ -34,12 +34,74 @@
 
             <div class="modal-content" >
                 <span class="close">&times;</span>
+                <!--Fase 1-->
+                <div id = "fase1" class = "point">
+                    <div id="resposta1" class = "resultado fontGotu">
+                        <a href="https://docs.google.com/presentation/d/1h_tglSgcaVokIzlBtM_9NmfDlJ2aqPgvwA3OlkKGJ9M/edit?usp=sharing"><p>Desafio 2</p></a>
+                        <a href="https://youtu.be/Iw-CO4MjDkE"><p>https://youtu.be/Iw-CO4MjDkE</p></a>
+                    </div>
+                    <div class = "desafio fontGotu">
+                        <p>Entre pela porta correta</p>
+                        <div class ="content1">
+                            <img src = "img/portas.jpg">
+                            <button class = "porta posiciona" onclick ="resp1()" >E</button> 
+                        </div>
+                    </div>
+                    <div class = "dica fontLibre">
+                        <p onclick="dica('dica1')" style="cursor: pointer;">Dica</p>
+                        <p id = "dica1" style="display: none;">1 Samuel 16</p>
+                    </div>
+                </div>
+             
+                <!--Fase 2-->
+                <div id = "fase2" class = "point">
+                    <div id="resposta2" class = "resultado fontGotu">
+                        <a href="https://drive.google.com/file/d/1EIIWKyY7-G8PA5pNVjoC_N1ZKlpdFJ4J/view?usp=sharing">1° página </a>
+                        <p>No mapa encontrará seu próximo destino</p>
+                    </div>  
+                    <div class = "desafio fontGotu meio">
+                        <input id = "tentativa2" type="text" id="fname" name="fname">
+                        <button class = "btn" onclick="submete(2)">Enviar</button>
+                    </div>
+                    <div class = "dica fontLibre">
+                        <p onclick="dica('dica2')" style="cursor: pointer;">Dica</p>
+                        <p id = "dica2" style="display: none;">Batismo / Nome Sobrenome (sem acento)</p>
+                    </div>
+                </div>
+
+                <!--Fase 3-->
+                <div id = "fase3" class = "point">
+                    <div class = "desafio fontGotu meio">
+                        <p>Lmainqw ycibzw: iaaqabi m lmakcjzi ycmu nwq Rwpv Ematmg, wvli lczi, xzwkczm xwz Ivbwvqw Eigvm, mtm tpm lizi i kpidm xizi lmakwjzqz w xzwfquw lmainqw</p>
+                    </div>
+                    <div class = "dica fontLibre">
+                        <p onclick="dica('dica3')" style="cursor: pointer;">Dica</p>
+                        <p id = "dica3" style="display: none;">a chave esta na página da canção / procure por decoders na internet</p>
+                    </div>
+                </div>
+
+                <!--Fase 4-->
+                <div id = "fase4" class = "point">
+                    <div id="resposta4" class = "resultado fontGotu">
+                        <p>Parabéns você achou o código</p>
+                        <p>O elfo te entregará o próximo desafio <a href="https://docs.google.com/presentation/d/1yVkswh10URbcpuNpTxQ6XWkYcqXU1rlW_2ZdLKWLaNc/edit?usp=sharing">aqui</a></p>
+                    </div>
+                    <div class = "desafio fontGotu pergunta">
+                        <p>Insira o código</p>
+                        <input id = "input4" type="text" id="fname" name="fname">
+                        <button class = "btn" onclick="submete(4)">Enviar</button>    
+                    </div>  
+                    <div class = "dica fontLibre">
+                        <p onclick="dica('dica4')" style="cursor: pointer;">Dica</p>
+                        <p id = "dica4" style="display: none;">Resolva o desafio 3</p>
+                    </div>
+                </div>
 
                 <!--Fase 5-->
                 <div id = "fase5" class = "point">
                     <div id="resposta5" class = "resultado fontGotu">
                         <a href="desafio6.html" style="margin-right: 1em; margin-left: 1em;color: black;">Desafio 6</a>
-                        <a href="https://drive.google.com/file/d/1kthuSulsdAIq1bOjw-Z0xkpDrsJKPH4X/view?usp=sharing" style="color: black;">Página</a>
+                        <a href="https://drive.google.com/file/d/1kthuSulsdAIq1bOjw-Z0xkpDrsJKPH4X/view?usp=sharing" style="color: black;">2° página</a>
                     </div>
                     <div class = "desafio fontGotu pergunta">
                         <form class = "pergunta5">
@@ -80,6 +142,20 @@
                         <p id = "dica8" style="display: none;">O maior best-seller da história (Almeida Revista e Atualizida)</p>
                     </div>
                 </div>
+
+                <!--Fase 9-->
+                <div id = "fase9" class = "point">
+                    <div class = "desafio fontGotu">
+                        <p>Decifre o desafio 8 para acessar o 9</p>
+                    </div>  
+                    <div class = "dica fontLibre">
+                        <p onclick="dica('dica5')" style="cursor: pointer;">Dica</p>
+                        <p id = "dica5" style="display: none;">perdao/Facebook</p>
+                    </div>
+                </div>
+
+                <!--Fase 10-->
+                <!--Live-->
             </div>  
         </div>
         <script>
@@ -91,6 +167,8 @@
                     alert("O desafio não esta aqui");
                 else if (ind == 7)
                     alert("O desafio esta com o guardião");
+                else if (ind == 10)
+                    alert("O desafio não esta aqui");
             }
             function vaiPara(fase){
                 var modal = document.getElementById("Modal");
@@ -112,7 +190,19 @@
             }
             function submete(fase)
             {
-                if (fase == 8)
+                if(fase == 2)
+                {
+                    let tent = document.getElementById('tentativa2').value;
+                    if (tent == "Joao Batista")
+                        document.getElementById('resposta2').style.display = "block";
+                }
+                else if (fase == 4)
+                {
+                    let tent = document.getElementById('input4').value;
+                    if (tent == "3324")
+                        document.getElementById('resposta4').style.display = "block";
+                }
+                else if (fase == 8)
                 {
                     let txt = document.getElementById('frase8').value;
                     if (txt == "Deus me ama")
@@ -133,19 +223,28 @@
             var span = document.getElementsByClassName("close")[0];
             
             span.onclick = function() {
-              modal.style.display = "none";
-              document.getElementById("fase5").style.display = "none";
-              //document.getElementById("fase6").style.display = "none";
-              document.getElementById("fase8").style.display = "none";
+                document.getElementById("fase8").style.display = "none";
+                document.getElementById("fase9").style.display = "none";
+                modal.style.display = "none";
+                document.getElementById("fase1").style.display = "none";
+                document.getElementById("fase2").style.display = "none";
+                document.getElementById("fase3").style.display = "none";
+                document.getElementById("fase4").style.display = "none";
+                document.getElementById("fase5").style.display = "none";
+                document.getElementById("fase6").style.display = "none";
               //document.getElementById("fase4").style.display = "none";
             }            
             window.onclick = function(event) {
               if (event.target == modal) {
-                modal.style.display = "none";
-                document.getElementById("fase5").style.display = "none";
-                //document.getElementById("fase6").style.display = "none";
                 document.getElementById("fase8").style.display = "none";
-                //document.getElementById("fase4").style.display = "none";
+                document.getElementById("fase9").style.display = "none";
+                modal.style.display = "none";
+                document.getElementById("fase1").style.display = "none";
+                document.getElementById("fase2").style.display = "none";
+                document.getElementById("fase3").style.display = "none";
+                document.getElementById("fase4").style.display = "none";
+                document.getElementById("fase5").style.display = "none";
+                document.getElementById("fase6").style.display = "none";
               }
             }
         </script>
